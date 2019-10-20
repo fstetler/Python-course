@@ -1,0 +1,12 @@
+Open Sublime
+Open Anaconda Powershell
+Create file in Sublime, ending with .py
+Create script in .py
+Save
+Go to path in Anaconda
+cd = change directory
+pwd = current directory
+clear = clear text
+cd .. = directory back
+Go to Pythonproject
+To run script, type "python .\something.py"
