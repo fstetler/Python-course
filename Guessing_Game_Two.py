@@ -20,7 +20,8 @@ what is the optimal one next week with the solution.)"""
 import random
 
 
-print('Hello user. Please think of a number')
+print('Hello user. Please think of a number \n \n \n')
+print('Have you thought of a number? Good. Lets play \n \n')
 
 guess = random.randint(0,100)
 
@@ -28,6 +29,7 @@ a = list(range(0,100+1))
 
 start = 0
 end = 101
+count = 0
 
 guessing = True
 while guessing:
@@ -35,8 +37,10 @@ while guessing:
 	guess = str(guess)
 	answer = input("Did you think of " + guess + "? Type 'yes' or 'no': \n")
 
+	count += 1
+
 	if answer == "yes":
-		print("Yay I guessed correct")
+		print("Yay I guessed correct. And it only took " + str(count) + " tries!")
 		break
 
 	else:
@@ -52,6 +56,7 @@ while guessing:
 			start = int(guess)
 			b = a[start+1:end]
 			guess = random.choice(b)
+		
 
 
 
