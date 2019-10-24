@@ -9,4 +9,4 @@ back = palindrome[::-1]
 if back == palindrome:
 	print("This is a palindrome")
 else:
-	print("fuck off")
+	print("This is not a palindrome")

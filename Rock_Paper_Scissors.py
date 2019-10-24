@@ -61,7 +61,7 @@ while playing:
 	if p1 == p2:
 		print("Youve picked the same")
 
-	play_again = str(input("Want to play again? y = play, q = quit"))
+	play_again = str(input("Want to play again? y = play, q = quit: "))
 	if play_again == "y":
 		playing = True
 	else:

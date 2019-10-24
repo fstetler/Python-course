@@ -20,8 +20,8 @@ what is the optimal one next week with the solution.)"""
 import random
 
 
-print('Hello user. Please think of a number \n \n \n')
-print('Have you thought of a number? Good. Lets play \n \n')
+print('Hello user. Please think of a number \n \n')
+print('Have you thought of a number? Good. Lets play. \n \n')
 
 guess = random.randint(0,100)
 

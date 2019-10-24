@@ -27,7 +27,7 @@ def square(size):
 
 
 
-size = int(input("How big you want the board to be"))
+size = int(input("How big you want the board to be: "))
 
 square(size)
 

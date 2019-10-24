@@ -27,6 +27,7 @@ print(list(b))
 
 x = []
 
+#print([element for element in a if element in b and element not in x])
 for element in a:
 	if element in b and element not in x:
 			x.append(element)

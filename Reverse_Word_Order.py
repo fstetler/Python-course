@@ -8,11 +8,17 @@ Then I would see the string:
   Michele is name My
 shown back to me."""
 
-def reverse(x):
-	y = []
-	for i in x:
-		y.append()
 
+def Reverse_Word_Order(words):
+	b = words.split()
+	b = b[::-1]
+	a = " ".join(b)
+	print(a)
 
-words = input("Write several words")
-print(reverse(words))
+words = Reverse_Word_Order(input("Write several words: "))
+
+"""b = words.split()
+b = b[::-1]
+a = " ".join(b)
+print(a)"""
+

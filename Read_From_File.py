@@ -16,5 +16,5 @@ about it in this post."""
 with open('Names.txt') as f:
 	line = f.readline()
 	while line:
-		line = line[1:2]
-		if line in 
+		print(line)
+		line = f.readline()

@@ -38,6 +38,7 @@ while Generating:
 
 	word = str(input("Lets create a password. Do you want to create one yourself (press 1), or generate one (press 2)?: \n"))
 
+	
 	if word == "1":
 		pw_self = str(input("Write what you want your password to be: \n"))
 		print("Your password is " + pw_self)
@@ -45,7 +46,7 @@ while Generating:
 
 	elif word == "2":
 		
-		length = int(input("How long do you want the password to be? \n"))
+		length = int(input("How many characters do you want the password to be? \n"))
 
 		password = random(length)
 
@@ -56,7 +57,8 @@ while Generating:
 		print("Your password is now " + pw_joined)
 
 		Generating = False
-
+	else:
+		print("This is not an option. \n")
 
 
 

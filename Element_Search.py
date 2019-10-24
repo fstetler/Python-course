@@ -8,16 +8,18 @@ Use binary search."""
 
 import random
 
-a = list(range(0,10,2))
+
+def find(a, rand):
+
+	for i in a:
+		if i == rand:
+			return True
+	return False
+
 rand = random.randint(0,9)
-print(rand)
-for i in a:
-	if i == rand:
-		print("True")
-	else:
-		print("False")
+a = list(range(0,10,2))
 
-
+print(find(a,rand))
 
 
 

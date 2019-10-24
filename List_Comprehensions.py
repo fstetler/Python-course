@@ -5,9 +5,9 @@ elements of this list in it."""
 
 a = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
 
-b = [i for i in a if i % 2 == 0]
+print([i for i in a if i % 2 == 0])
 
-print(b)
+#rint(b)
 
 """for i in a:
 	if i % 2 == 0:

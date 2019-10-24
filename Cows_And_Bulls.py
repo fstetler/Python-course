@@ -22,12 +22,15 @@ while playing:
 	bull = 0
 	
 	guess = input("Please input a four digit number: \n")
+	guess = str(guess)
 
 	for i in range(0,4):
-		if rand[i] == guess[i]:
+		if guess[i] == rand[i]:
 			cow += 1
-		elif rand[i] in guess:
-			bull += 1
+		elif rand[i] == guess:
+					bull += 1
+
+
 	print(cow)
 	print(bull)
 	if cow == 4:

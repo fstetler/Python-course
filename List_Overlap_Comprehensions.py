@@ -19,3 +19,22 @@ or try to implement this on your own and use at least one list comprehension in 
 Extra:
 
 Randomly generate two lists to test this"""
+
+
+
+a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+
+x = []
+
+#if len(a) > len(b) or len(a) == len(b):
+#	x = a
+#elif len(a) < len(b):
+#	x = b
+
+for i in a:
+	if i in b and i not in x:
+		x.append(i)
+print(x)
+
+#print([i for i in a if i in b and i not in x])

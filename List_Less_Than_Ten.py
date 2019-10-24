@@ -16,7 +16,10 @@ b = []
 
 number = int(input("Please input a number: "))
 
-for element in a:
-	if element < number:
-		b.append(element)
-print(b)
+#for element in a:
+#	if element < number:
+#		b.append(element)
+#print(b)
+
+
+print([element for element in a if element < number])

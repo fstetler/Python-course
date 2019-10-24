@@ -9,17 +9,17 @@ Keep track of how many guesses the user has taken, and when the game ends,
 print this out."""
 
 
+import random
+rand = random.randint(1,9)
 
 guessing = True
 count = 0
 
 while guessing:
 	
-	import random
-	rand = random.randint(1,9)
 	print("This is the random number youre not supposed to see: " + str(rand))
 	
-	guess = input("Please guess on a number. Write 'exit' to exit and 'count' to see how many tries you had: ")
+	guess = input("Please guess on a number between zero and ten. Write 'exit' to exit and 'count' to see how many tries you had: ")
 
 	
 	
@@ -38,7 +38,9 @@ while guessing:
 	if guess > rand:
 		print("You guessed too high")
 	if guess == rand:
-		print("You guessed exactly right")
+		print("You guessed exactly right, and it took only " + str(count) + " tries!")
+
+		guessing = False
 
 
 
