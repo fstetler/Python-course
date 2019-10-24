@@ -38,43 +38,44 @@ def random(x):
 	return password
 
 
-
-import string
-
-# Continue to run while generating is True
-
-Generating = True
-while Generating:
-
-	word = str(input("Lets create a password. Do you want to create one yourself (press 1), or generate one (press 2)?: \n"))
-
-	# If 1, wrote your own word as a password
-
-	if word == "1":
-		pw_self = str(input("Write what you want your password to be: \n"))
-		print("Your password is " + pw_self)
-		Generating = False
-
-	# If 2, decide the length of your password
-
-	elif word == "2":
-		
-		length = int(input("How many characters do you want the password to be? \n"))
-
-		password = random(length)
-
-		pw = [str(i) for i in password]
-
-		pw_joined = "".join(pw)
-
-		print("Your password is now " + pw_joined)
-
-		Generating = False
-
-	# If neither 1 or 2, repeat the process
+if __name__ == '__main__':
 	
-	else:
-		print("This is not an option. \n")
+	import string
+
+	# Continue to run while generating is True
+
+	Generating = True
+	while Generating:
+
+		word = str(input("Lets create a password. Do you want to create one yourself (press 1), or generate one (press 2)?: \n"))
+
+		# If 1, wrote your own word as a password
+
+		if word == "1":
+			pw_self = str(input("Write what you want your password to be: \n"))
+			print("Your password is " + pw_self)
+			Generating = False
+
+		# If 2, decide the length of your password
+
+		elif word == "2":
+			
+			length = int(input("How many characters do you want the password to be? \n"))
+
+			password = random(length)
+
+			pw = [str(i) for i in password]
+
+			pw_joined = "".join(pw)
+
+			print("Your password is now " + pw_joined)
+
+			Generating = False
+
+		# If neither 1 or 2, repeat the process
+
+		else:
+			print("This is not an option. \n")
 
 
 
