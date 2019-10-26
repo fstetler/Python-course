@@ -4,6 +4,8 @@ generating a new password every time the user asks for a new password.
 
 Extra: Ask the user how strong they want their password to be. For weak passwords, pick a word"""
 
+import string
+
 def random(x):
 	
 	# Define lists of capital letters, lower case letters, and numbers
@@ -12,7 +14,6 @@ def random(x):
 	bigletter = list(string.ascii_uppercase)
 	number = list(range(0,10))
 
-	passwordlength = list(range(0,x))
 	password = []
 
 	start = 0
@@ -31,8 +32,6 @@ def random(x):
 		
 	return password
 
-
-import string
 
 # Continue to run while generating is True
 
