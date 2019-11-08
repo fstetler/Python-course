@@ -1,3 +1,3 @@
-# python-course
+# python
 
-Python scripts for course material 
+Python scripts
