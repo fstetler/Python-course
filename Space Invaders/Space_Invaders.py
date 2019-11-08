@@ -33,7 +33,6 @@ class shots():
 		pygame.draw.rect(screen, self.color, (self.x, self.y, self.width, self.height))
 
 
-
 def printScreen():
 	screen.blit(background, (0, 0))
 	screen.blit(ship, (shipStats.x, shipStats.y))
@@ -44,7 +43,6 @@ shipStats = dimensions(300,400,128,128)
 projectiles = []
 run = True
 while run:
-
 
 
 	key = pygame.key.get_pressed()
