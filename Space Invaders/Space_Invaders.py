@@ -20,32 +20,40 @@ class dimensions():
 		self.height = height
 		self.speed = 2
 
-class shots():
-	def __init__(self,x,y,radius,color):
+class projectile(object):
+	def __init__(self,x,y,radius,color,speed):
 		self.x = x
 		self.y = y
-		self.width = width
-		self.height = height
+		self.radius = radius
 		self.color = color
-		self.speed = 10
+		self.speed = 3
 
-	def draw(screen):
-		pygame.draw.rect(screen, self.color, (self.x, self.y, self.width, self.height))
-
+	def draw(self,screen):
+		pygame.draw.circle(screen, self.color, (self.x, self.y), self.radius)
 
 def printScreen():
 	screen.blit(background, (0, 0))
 	screen.blit(ship, (shipStats.x, shipStats.y))
+	for bullet in bullets:
+		bullet.draw(screen)
 	pygame.display.update()
 
-
 shipStats = dimensions(300,400,128,128)
-projectiles = []
+bullets = []
 run = True
 while run:
 
+	for bullet in bullets:
+		if bullet.y < 700 and bullet.y > 0:
+			bullet.y -= bullet.speed
+		else:
+			bullets.pop(bullets.index(bullet))
 
 	key = pygame.key.get_pressed()
+
+	if key[pygame.K_SPACE]:
+		if len(bullets) < 5:
+			bullets.append(projectile(round(shipStats.x + shipStats.width //2), round(shipStats.y + shipStats.height //2), 6, (255,0,0), 10))
 
 	if key[pygame.K_LEFT] and shipStats.x > shipStats.speed:
 		shipStats.x -= shipStats.speed
