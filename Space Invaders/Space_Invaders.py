@@ -102,7 +102,7 @@ class enemy(object):
 		else:
 			self.visible = False
 			font1 = pygame.font.SysFont('comicsans', 50)
-			text = font1.render('The Rebels has won', 1, (0,255,0))
+			text = font1.render('The Rebels have won', 1, (0,255,0))
 			screen.blit(text, (320 - (text.get_width()/2), 200))
 			pygame.display.update()
 			i = 0
@@ -218,4 +218,3 @@ while run:
 
 # Exits the program
 pygame.quit()
-sys.exit()
