@@ -35,9 +35,9 @@ def random(x):
 
 # Continue to run while generating is True
 
-Generating = True
+generating = True
 
-while Generating:
+while generating:
 
 	word = str(input("Let's create a password. Do you want to create one yourself (press 1) or generate one (press 2)?: \n"))
 
@@ -46,7 +46,7 @@ while Generating:
 	if word == "1":
 		pw_self = str(input("Write what you want your password to be: \n"))
 		print("Your password is " + pw_self)
-		Generating = False
+		generating = False
 
 	# If 2, decide the length of your password
 	
@@ -59,7 +59,7 @@ while Generating:
 
 		print("Your password is now " + pw_joined)
 
-		Generating = False
+		generating = False
 
 	# If neither 1 or 2, repeat the process
 
