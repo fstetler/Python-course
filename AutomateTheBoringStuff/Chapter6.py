@@ -82,6 +82,85 @@ def spam14():
 	print(spam.split(' '))
 	print(spam.split('e'))
 
+def spam15():
+	before, sep, after = 'Hello, world!'.partition(' ')
+	print(before)
+
+def spam16():
+	hello = 'Hello'.rjust(20)
+	print(hello)
+	print('Hello'.rjust(20,'*'))
+
+def spam17():
+	picnic = {'apples': 2, 'cups': 3}
+	print('Im bringingn ' + str(picnic['cups']) + ' cups and ' + str(picnic.get('mugs',0)) + ' mugs')
+
+def spam18():
+	spam = '    Hello, world  '
+	print(spam.strip())
+
+def spam19():
+	print(ord('B'))
+	print(chr(44))
+
+def spam20():
+	TEXT = {'agree': """Yes, I agree. That sounds fine to me.""",
+			'busy': """Sorry, can we do this later this week or next week?""",
+			'upsell': """Would you consider making this a monthly donation?"""}
+
+def PigLatin():
+	vowels = ['a','e','i','o','u','y']
+
+	sentence = input('Please enter a sentence: ')
+
+
+	wordList = sentence.split()
+	print(wordList)
+	newWordList = []
+
+	for i in wordList:
+		if len(i) > 1:
+			if i[-1] == '.':
+				i = i[:-1]
+				if i.isalpha():
+					if i[0] not in vowels and i[1] not in vowels:
+						newWordList.append(i[2:] + i[0:2] + 'ay.')
+					elif i[0] not in vowels:
+						newWordList.append(i[1:] + i[0] + 'ay.')
+					elif i[0] in vowels:
+						newWordList.append(i+'yay.')
+				else:
+					newWordList.append(i + '.')
+
+			else:
+				if i.isalpha():
+
+					if i[0] not in vowels and i[1] not in vowels:
+						newWordList.append(i[2:] + i[0:2] + 'ay')
+					elif i[0] not in vowels:
+						newWordList.append(i[1:] + i[0] + 'ay')
+					elif i[0] in vowels:
+						newWordList.append(i+'yay')
+				else:
+					newWordList.append(i)
+		else:
+			newWordList.append(i + 'yay')
+	print(' '.join(newWordList))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
