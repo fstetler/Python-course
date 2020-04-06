@@ -2,5 +2,8 @@
 
 import shutil, os
 from pathlib import Path
-p = Path('C:\Python-course\AutomateTheBoringStuff')
-shutil.copy(p/'spam.txt',p/'some_folder')
+def spam1():
+	p = Path('C:/Python-course/AutomateTheBoringStuff/Testingfiles')
+	shutil.copy(p/'spam.txt',p/'some_folder')
+
+spam1()

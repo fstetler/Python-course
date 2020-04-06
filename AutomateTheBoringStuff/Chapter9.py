@@ -89,6 +89,21 @@ def spam14():
 	baconFile.close()
 	print(content)
 
+import shelve
+def spam15():
+	shelfFile = shelve.open('mydata')
+	cats = ['Zophie','Pooka','Simon']
+	shelfFile['cats'] = cats
+	shelfFile.close()
+
+	shelfFile = shelve.open('mydata')
+	type(shelfFile)
+	print(shelfFile['cats'])
+	shelfFile.close()
+
+def createFile():
+	
+	os.makedirs('C:/Python-course/AutomateTheBoringStuff/Testingfiles')
 
 
 
