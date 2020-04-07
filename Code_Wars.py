@@ -122,16 +122,50 @@ def stat(strg):
 	AveTot = [int(rangeHourAve), int(rangeMinAve), round(rangeSecAve)]
 	print(AveTot)
 
-strg = ("01|15|59, 1|47|16, 01|17|20, 1|32|34, 2|17|17")
-stat(strg)
+#strg = ("01|15|59, 1|47|16, 01|17|20, 1|32|34, 2|17|17")
+#stat(strg)
 
+def likes(names):
+	if len(names) == 0:
+		return 'no one likes this'
+	elif len(names) == 1:
+		return names[0] + ' likes this'
+	elif len(names) == 2:
+		return names[0] + ' and ' + names[1] + ' likes this'
+	elif len(names) == 3:
+		return names[0] + ', ' + names[1] + ' and ' + names[2] + ' likes this'
+	elif len(names) > 3:
+		return names[0] + ', ' + names[1] + ' and ' + str((len(names) - 2)) + ' likes this' 
 
+#print(likes(names = ['Alex', 'Jacob', 'Mark', 'Max']))
 
+def highest_rank(arr):
+	maxCount = []
+	maxList = []
+	for i in arr:
+		maxCount.append(arr.count(i))
+	for j in arr:
+		if arr.count(j) == max(maxCount):
+			maxList.append(j)
+	maxList.sort()
+	return maxList[-1]
 
+# arr = [12, 10, 8, 12, 7, 6, 4, 10, 12, 10, 10]
+# print(highest_rank(arr))
 
+def duplicate_count(text):
+	c = []
+	number = 0
+	for i in text:
+		if i in text and not text[text.index(i)]:
+			print('a')	
+	# 	c.append(text.count(i))
+	# print(c)
+	# for j in c:
+	# 	if j > 1:
+	# 		number += j
+	# print(int(number/4))
 
-
-
-
-
+text = 'abcdea'
+duplicate_count(text)
 
