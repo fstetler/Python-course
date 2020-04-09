@@ -1,7 +1,7 @@
 # Highest single digit value
-def job1():
+def job1(A):
 	singleList = []
-	for i in array:
+	for i in A:
 		if i > -10 and i < 10:		# Only values between -10 and 10, i.e singel digit values
 			singleList.append(i)	# Adds those values to a list
 	if len(singleList) > 0:			
@@ -10,14 +10,14 @@ def job1():
 		return 'No value'
 
 # Marys candies
-def job2():
+def job2(T):
 	len_T = len(T)
 	while len(T) > len_T/2:			# Remove a candy as long as there are more than half left
 		c = []	
 		for i in T:
 			c.append(T.count(i))	# Count how many of each candy there are
 		del T[c.index(max(c))]		# Remove one candy of which there are most of
-	return(T)						# Return the new list T
+	return T						# Return the new list T
 	
 # Two values before added
 def job3(N):
