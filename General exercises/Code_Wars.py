@@ -168,9 +168,11 @@ def duplicate_count(text):
 
 #def iter_pi(epsilon):
 
-def job1():
+A = [-6, -91, 1011, -100, 84, -22, 0, 1, 473]
+def job1(A):
 	singleList = []
-	for i in array:
+	
+	for i in A:
 		if i > -10 and i < 10:
 			singleList.append(i)
 	if len(singleList) > 0:
@@ -178,18 +180,22 @@ def job1():
 	else:
 		return 'No value'
 
-def job2():
+
+#print(job1(array))
+T = [3,4,7,7,6,6]
+def job2(T):
 	len_T = len(T)
 	while len(T) > len_T/2:
 		c = []	
 		for i in T:
 			c.append(T.count(i))
 		del T[c.index(max(c))]
-	return(T)
+	return T
+#print(job2(T))
 	
 def job3(N):
 	numbers = [0,1,1]
-	while len(numbers) < 10000000:
+	while len(numbers) < 100000:
 		while len(str(numbers[-1])) < 2:
 			if len(str(numbers[-2])) > 1:
 				add = numbers[-1] + int(str(numbers[-2])[0]) + int(str(numbers[-2])[1])
@@ -209,6 +215,8 @@ def job3(N):
 
 	return numbers[N]
 
+N = 11
+print(job3(N))
 
 
 
