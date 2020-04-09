@@ -23,20 +23,20 @@ def job2():
 def job3(N):
 	numbers = [0,1,1]
 	while len(numbers) < 10000000:	
-		while len(str(numbers[-1])) < 2:														# while the last number is singel digit
-			if len(str(numbers[-2])) > 1:														# if the next to last number is double digit
+		while len(str(numbers[-1])) < 2:			# while the last number is singel digit
+			if len(str(numbers[-2])) > 1:			# if the next to last number is double digit
 				add = numbers[-1] + int(str(numbers[-2])[0]) + int(str(numbers[-2])[1])			# Create a number which adds the last number plus the two digits from the second to last
-				numbers.append(add)																# Add that number to the list
+				numbers.append(add)					# Add that number to the list
 			else:
-				add = numbers[-1] + numbers[-2]													# if the next to last number is singel digit add the last and second to last value
-				numbers.append(add)																# Add that number to the list
+				add = numbers[-1] + numbers[-2]		# if the next to last number is singel digit add the last and second to last value
+				numbers.append(add)					# Add that number to the list
 
-		while len(str(numbers[-1])) > 1:														# while the last number is double digit
-			if len(str(numbers[-2])) > 1:														# if the next to last number is double digit
+		while len(str(numbers[-1])) > 1:			# while the last number is double digit
+			if len(str(numbers[-2])) > 1:			# if the next to last number is double digit
 				add = int(str(numbers[-1])[0]) + int(str(numbers[-1])[1]) + int(str(numbers[-2])[0]) + int(str(numbers[-2])[1])	# Create a number which adds the two values from the last number and the two values from the next to last number
-				numbers.append(add)																# Add that number to the list
+				numbers.append(add)					# Add that number to the list
 			else:
 				add = int(str(numbers[-1])[0]) + int(str(numbers[-1])[1]) + int(numbers[-2])	# if the next to last number is singel digit add the two values from the last value and the second last value
-				numbers.append(add)																# Add that number to the list
+				numbers.append(add)					# Add that number to the list
 	
-	return numbers[N]																			# Return the Nth value of numbers
+	return numbers[N]								# Return the Nth value of numbers
