@@ -62,8 +62,22 @@ def spam5():
 	#print(r.headers)
 
 
+import bs4
+def spam6():
+	res = requests.get('https://nostarch.com')
+	res.raise_for_status()
+	noStarchSoup = bs4.BeautifulSoup(res.text, 'html.parser')
+	print(type(noStarchSoup))
 
-spam5()
+def spam7():
+	exampleFile = open('example.html')
+	exampleSoup = bs4.BeautifulSoup(exampleFile, 'html.parser')
+	print(type(exampleSoup))
+
+def spam8():
+	file = requests.get(r'https://www.smhi.se/q/Roslags-N%C3%A4sby/T%C3%A4by/')
+	
+	#print(file)
 
 
 

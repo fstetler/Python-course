@@ -157,7 +157,7 @@ def duplicate_count(text):
 	c = []
 	number = 0
 	for i in text:
-		if i in text and not text[text.index(i)]:
+		if i not in text[text.index(i)]:
 			print('a')	
 	# 	c.append(text.count(i))
 	# print(c)
@@ -166,6 +166,66 @@ def duplicate_count(text):
 	# 		number += j
 	# print(int(number/4))
 
-text = 'abcdea'
-duplicate_count(text)
+#def iter_pi(epsilon):
+
+def job1():
+	singleList = []
+	for i in array:
+		if i > -10 and i < 10:
+			singleList.append(i)
+	if len(singleList) > 0:
+		return max(singleList)
+	else:
+		return 'No value'
+
+def job2():
+	len_T = len(T)
+	while len(T) > len_T/2:
+		c = []	
+		for i in T:
+			c.append(T.count(i))
+		del T[c.index(max(c))]
+	return(T)
+	
+def job3(N):
+	numbers = [0,1,1]
+	while len(numbers) < 10000000:
+		while len(str(numbers[-1])) < 2:
+			if len(str(numbers[-2])) > 1:
+				add = numbers[-1] + int(str(numbers[-2])[0]) + int(str(numbers[-2])[1])
+				numbers.append(add)
+			else:
+				add = numbers[-1] + numbers[-2]
+				numbers.append(add)
+
+		while len(str(numbers[-1])) > 1:
+			if len(str(numbers[-2])) > 1:
+				add = int(str(numbers[-1])[0]) + int(str(numbers[-1])[1]) + int(str(numbers[-2])[0]) + int(str(numbers[-2])[1])
+				numbers.append(add)
+			else:
+				add = int(str(numbers[-1])[0]) + int(str(numbers[-1])[1]) + int(numbers[-2])
+				numbers.append(add)
+	
+
+	return numbers[N]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
