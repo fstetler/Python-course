@@ -154,21 +154,23 @@ def highest_rank(arr):
 # print(highest_rank(arr))
 
 def duplicate_count(text):
-	c = []
-	number = 0
+	# IMPOSSIBLE
+	c = 0
+	text = list(text)
 	for i in text:
-		if i not in text[text.index(i)]:
-			print('a')	
-	# 	c.append(text.count(i))
-	# print(c)
-	# for j in c:
-	# 	if j > 1:
-	# 		number += j
-	# print(int(number/4))
+		#print(text.index(i))
+		if i in text[text.index(i)+1:]:
+			c += 1
+			text = list(filter(lambda a: a != i , text))
+
+	print(c)
+			
+
+
 
 #def iter_pi(epsilon):
 
-A = [-6, -91, 1011, -100, 84, -22, 0, 1, 473]
+#A = [-6, -91, 1011, -100, 84, -22, 0, 1, 473]
 def job1(A):
 	singleList = []
 	
@@ -215,15 +217,254 @@ def job3(N):
 
 	return numbers[N]
 
-N = 11
-print(job3(N))
+def iter_pi(epsilon):
+	#i_list = []
+	#c = 2
+	# for i in range(100):
+	# 	if c % 2 == 0:
+	# 		i_list.append(1)
+	# 	else:
+	# 		i_list.append(-1)
+	# 	c += 1
+
+	# newList = []
+	# for j in range(0,100,2):
+	# 	newList.append(j)
+	# #print(newList)
+
+	# f_list = []
+	# for i in newList:
+	# 	f_list.append(i*i_list[newList.index(i)])
+	# print(f_list)
+	
+
+	pi = 4
+	pi_real = 3.14159265
+	n = 1
+	i = -1
+	print(pi-pi_real)
+	while abs(pi - pi_real) > epsilon:
+		pi = pi + 4*i/((1 + 2*n))
+		print(pi)
+		n += 1
+		print(n)
+		i *= -1
+		print(i)
+		print(pi)
+			
+def disemvowel(string):
+	#print(string)
+	#string = string.split()
+	string = list(string)
+	#print(string)
+	vowels = ['a','e','i','o','u','A','E','I','O','U']
+	newString = []
+	for i in string:
+		print(i)
+		for letter in i:
+			print(letter)
+			if letter not in vowels:
+				newString.append(letter)
+	print(newString)			
+	#print(newString)
+	#print(string)
+	#print(vowels)
+	print(''.join(newString))
+
+def solution(number):
+	natNumb = []
+	for i in range(1,number):
+		if i % 3 == 0 or i % 5 == 0:
+			natNumb.append(i)
+	return sum(natNumb)
+
+def openOrSenior(data):
+	OpenOrSeniorList = []
+	for i in data:
+		if i[0] >= 55 and i[1] > 7:
+			OpenOrSeniorList.append('Senior')
+		else:
+			OpenOrSeniorList.append('Open')
+	return OpenOrSeniorList
 
 
+def xo(s):
+	xlist = list(s)
+	countx = 0
+	counto = 0
+	for i in xlist:
+		if i.lower() == 'o':
+			counto += 1
+		elif i.lower() == 'x':
+			countx += 1
+	if countx == counto:
+		return True
+	else:
+		return False
+
+def accum(s):
+	c = 0
+	newString = []
+	for i in s:
+		newString.append(i.upper() + i.lower()*c + '-')
+		c += 1	
+	string = ''.join(newString)
+	print(string[:-1])
+
+def tower_builder(n_floors):
+	tower = []
+	c = 1
+	for i in range(n_floors,0,-1):
+		length = len(range(n_floors))
+		tower.append(' '*(i-1) + '*'*c + ' '*(i-1))
+		c += 2
+	print(tower)
+
+def calculator():
+	def zero(x):
+		if x == '+':
+			return 
+		return 0
+	def one():
+		return 1
+	def two():
+		return 2
+	def plus():
+		return '+'
+
+	print(zero())
+
+def is_isogram(string):
+	if string == '':
+		return True
+	else:
+		#print(string)
+		string = list(string.lower())
+		#print(string)
+		#print(string[:string.index('v')] + string[string.index('v')+1:])
+		for i in string:
+			if i in string[:string.index(i)] + string[string.index(i)+1:]:
+				return False
+			else:
+				return True
+
+def is_isogram2(string):
+	if string == '':
+		return True
+	else:
+		countList = []
+		string = list(string.lower())
+		print(string)
+		print(string.count('o'))
+		for i in string:
+			countList.append(string.count(i))
+		print(countList)
+		for j in countList:
+			if j > 1:
+				return False
+			else:
+				return True
+		print(countList)
+
+def check_coupon(entered_code, correct_code, current_date, expiration_date):
+
+	def MonthToNumber(Month):
+		MonthNum = {
+					'January': 1,
+					'February': 2,
+					'March': 3,
+					'April': 4,
+					'May': 5,
+					'June': 6,
+					'July': 7,
+					'August': 8,
+					'September': 9,
+					'October': 10,
+					'November': 11,
+					'December': 12
+					}
+
+		return MonthNum[Month]
+
+	month_current_num = MonthToNumber(current_date.split()[0])
+	month_expiration_num = MonthToNumber(expiration_date.split()[0])
+
+	if entered_code != correct_code:
+		return False
+	else:
+		if current_date.split()[-1] > expiration_date.split()[-1]:
+			if month_current_num > month_expiration_num:
+				if current_date.split()[-2][:-1] > expiration_date.split()[-2][:-1]:
+					return False
+		else:
+			return True
+	
+
+def gimme(input_array):
+	#sortedList = input_array.sorted
+	print(sorted(input_array)[1])
+
+def sum_digits(number):
+	numListStr = list(str(number))
+	sumNum = 0
+	if numListStr[0] == '-':
+		for i in numListStr[1:]:
+			sumNum += int(i)
+		return sumNum
+	else:
+		for i in numListStr:
+			sumNum += int(i)
+		return sumNum
 
 
+def high_and_low(numbers):
+	numList = numbers.split()
+	numListSort = sorted(numList, key = int)
+	print(numList)
+	print(numListSort)
+
+def row_sum_odd_numbers(n):
+	rowList = []
+	if n == 1:
+		return 1
+	# 1 3 6 10 15
+	step = 1 + (2*(n-1))
+	for i in range(1,1 + (2+2*n)):
+		print(i)
+	#digits = 1 + (2*(n-1))    
+	# for i in range(1,n+n*):
+	# 	digits = 1 + (2*(i-1))
+	# 	rowList.append(digits)
+	#print(rowList)
+
+def find(n):
+	c = 0
+	for i in range(n+1):
+		print(i)
 
 
+def to_jaden_case(string):
+	stringList = string.split()
+	print(stringList)
+	newSentence = []
+	for i in stringList:
+		newSentence.append(i.capitalize())
+	print(''.join(newSentence))
 
+
+def divisors(n):
+	c = 0
+	for i in range(1,int(n/2)+1):
+		if i % 2 == 0:
+			c += 1
+		elif i % 3 == 0:
+			c += 1
+		elif i % 5 == 0:
+			c += 1
+	print(c) 
+
+n = 5
+divisors(n)
 
 
 

@@ -255,7 +255,7 @@ def CommaCode():
 		newSpam.append(spam[-1])
 		newSpam.insert(-1,'and ')
 		print('You will be served ' + ''.join(newSpam))
-CommaCode()
+
 
 def CommaCode1():
 	spam = ['rat','horse','cat','dog','mouse']
@@ -265,25 +265,40 @@ def CommaCode1():
 		new = ', '.join(spam[:-1])
 		new = new + ', and ' + spam[-1]
 		print('You will be served ' + new)
-CommaCode1()
 
 
 import random
 def CoinFlipStreaks():
 	coinList = []
-	while len(coinList) < 10000:
+	while len(coinList) < 100:
 		if random.randint(0,1) == 0:
 			coinList.append('H')
 		else:
 			coinList.append('T')
 		coinCount = 0
 		for i in range(len(coinList)-6):
+			#if (coinList[i:i+5] == 'H') or (coinList[i:i+5] == 'T'): 
 			if (coinList[i] == 'H' and coinList[i+1] == 'H' and coinList[i+2] == 'H' and coinList[i+3] == 'H' and coinList[i+4] == 'H' and coinList[i+5] == 'H') or (coinList[i] == 'T' and coinList[i+1] == 'T' and coinList[i+2] == 'T' and coinList[i+3] == 'T' and coinList[i+4] == 'T' and coinList[i+5] == 'T'):
 				coinCount += 1
 	print(coinCount)
 
+def CharacterPictureGrid():
+	grid = [['.', '.', '.', '.', '.', '.'],
+			['.', 'O', 'O', '.', '.', '.'],
+			['O', 'O', 'O', 'O', '.', '.'],
+			['O', 'O', 'O', 'O', 'O', '.'],
+			['.', 'O', 'O', 'O', 'O', 'O'],
+			['O', 'O', 'O', 'O', 'O', '.'],
+			['O', 'O', 'O', 'O', '.', '.'],
+			['.', 'O', 'O', '.', '.', '.'],
+			['.', '.', '.', '.', '.', '.']]
+
+	for i in grid:
+		for j in grid:
+			print(grid[j][i])
 
 
+CharacterPictureGrid()
 
 
 
